@@ -13,7 +13,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Hassen Saddour</a>
+            <a class="navbar-brand" href="#">MyPortfolio</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -29,9 +29,9 @@
         <div class="offcanvas-body">
             <ul class="nav flex-column">
                 <li class="nav-item"><a class="nav-link text-white" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#experience">Experience</a></li>
                 <li class="nav-item"><a class="nav-link text-white" href="#skills">Skills</a></li>
                 <li class="nav-item"><a class="nav-link text-white" href="#projects">Projects</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="#experience">Experience</a></li>
                 <li class="nav-item"><a class="nav-link text-white" href="#certifications">Certifications</a></li>
                 <li class="nav-item"><a class="nav-link text-white" href="#contact">Contact</a></li>
             </ul>
@@ -66,43 +66,75 @@
     <section id="skills" class="container my-5 section">
         <h2>Skills</h2>
         <div class="skill">
-            <p>Network Security <span class="level">High</span></p>
+            <p>Network Security <span class="level"></span></p>
             <div class="progress"><div class="progress-bar high"></div></div>
         </div>
         <div class="skill">
-            <p>Pentesting <span class="level">Medium</span></p>
+            <p>Pentesting <span class="level"></span></p>
             <div class="progress"><div class="progress-bar medium"></div></div>
         </div>
         <div class="skill">
-            <p>Secure Development <span class="level">Above Medium</span></p>
+            <p>Secure Development <span class="level"></span></p>
             <div class="progress"><div class="progress-bar above-medium"></div></div>
         </div>
         <div class="skill">
-            <p>DevSecOps <span class="level">Medium</span></p>
+            <p>DevSecOps <span class="level"></span></p>
             <div class="progress"><div class="progress-bar medium"></div></div>
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Projects Section with Horizontal Scroll -->
     <section id="projects" class="container my-5 section">
         <h2>Projects</h2>
         <div class="project-container">
             <div class="project-card" onclick="location.href='project1.html';">
                 <h5>Threat Hunting System</h5>
-                <p>Developed a real-time monitoring solution for detecting threats.</p>
+                <p>Developed a real-time monitoring solution for detecting threats.</p> 
+            </div>
+            <div class="project-card" onclick="location.href='project2.html';">
+                <h5>Encryption Tool</h5>
+                <p>Built a secure encryption/decryption tool using AES and RSA.</p>
+            </div>
+            <div class="project-card" onclick="location.href='project3.html';">
+                <h5>DevSecOps Pipeline</h5>
+                <p>Implemented a secure DevSecOps pipeline with automated testing.</p>
             </div>
         </div>
     </section>
 
     <!-- Certifications Section -->
     <section id="certifications" class="container my-5 section text-start">
-        <h2>Certifications</h2>
-        <ul>
-            <li>🔹 ISO 27001</li>
-            <li>🔹 Fortinet</li>
-            <li>🔹 CEH</li>
-            <li>🔹 CompTIA Security+</li>
-        </ul>
+        <h2>Certifications Preparation</h2>
+        <div class="row">
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="certification-card">
+                    <i class="fas fa-certificate fa-3x"></i>
+                    <h5>ISO 27001</h5>
+                    <p>Information security management systems (ISMS) standard.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="certification-card">
+                    <i class="fas fa-shield-alt fa-3x"></i>
+                    <h5>Fortinet</h5>
+                    <p>Network security certification focusing on Fortinet products.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="certification-card">
+                    <i class="fas fa-user-secret fa-3x"></i>
+                    <h5>CEH</h5>
+                    <p>Certified Ethical Hacker, focusing on penetration testing techniques.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="certification-card">
+                    <i class="fas fa-lock fa-3x"></i>
+                    <h5>CompTIA Security+</h5>
+                    <p>Entry-level certification covering essential security concepts.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Contact Section -->
@@ -111,10 +143,15 @@
         <div class="social-links">
             <a href="https://github.com/hassensaddour"><img src="assets/images/github.png" class="social-icon"></a>
             <a href="https://www.linkedin.com/in/hassen-saddour/"><img src="assets/images/linkedin.png" class="social-icon"></a>
+            <a href="mailto:hassen.saddour@esprit.tn"><img src="assets/images/gmail.png" class="social-icon">hassen.saddour@esprit.tn</a>
         </div>
-        <p>Email: <a href="mailto:hassen.saddour@esprit.tn">hassen.saddour@esprit.tn</a></p>
     </section>
 
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <p>&copy; 2025 Hassen Saddour. All rights reserved.</p>
+    </footer>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="assets/script.js"></script>
 
