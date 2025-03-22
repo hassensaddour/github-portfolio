@@ -41,7 +41,7 @@
     <!-- Hero Section -->
     <header class="hero">
         <div class="container text-center text-white">
-            <img src="assets/images/profile.jpg" alt="Profile" class="profile-pic-large">
+            <img src="assets/images/profile.jpg" alt="Profile" class="profile-pic-larger">
             <h1 class="fade-in">Hassen Saddour</h1>
             <p class="fade-in">Cybersecurity Engineer | Pentester | DevSecOps</p>
         </div>
@@ -51,20 +51,20 @@
     <section id="skills" class="container my-5 section">
         <h2>Skills</h2>
         <div class="skill">
-            <p>Network Security</p>
-            <div class="progress"><div class="progress-bar" style="width: 85%"></div></div>
+            <p>Network Security <span class="level">High</span></p>
+            <div class="progress"><div class="progress-bar high"></div></div>
         </div>
         <div class="skill">
-            <p>Pentesting</p>
-            <div class="progress"><div class="progress-bar" style="width: 60%"></div></div>
+            <p>Pentesting <span class="level">Medium</span></p>
+            <div class="progress"><div class="progress-bar medium"></div></div>
         </div>
         <div class="skill">
-            <p>Secure Development</p>
-            <div class="progress"><div class="progress-bar" style="width: 75%"></div></div>
+            <p>Secure Development <span class="level">Above Medium</span></p>
+            <div class="progress"><div class="progress-bar above-medium"></div></div>
         </div>
         <div class="skill">
-            <p>DevSecOps</p>
-            <div class="progress"><div class="progress-bar" style="width: 60%"></div></div>
+            <p>DevSecOps <span class="level">Medium</span></p>
+            <div class="progress"><div class="progress-bar medium"></div></div>
         </div>
     </section>
 
@@ -80,16 +80,22 @@
                 <h5>Encryption Tool</h5>
                 <p>Built a secure encryption/decryption tool using AES and RSA.</p>
             </div>
+            <div class="project-card" onclick="location.href='project3.html';">
+                <h5>DevSecOps Pipeline</h5>
+                <p>Implemented a secure DevSecOps pipeline with automated testing.</p>
+            </div>
         </div>
     </section>
 
-    <!-- Certifications -->
+    <!-- Certifications (Reverted to previous version) -->
     <section id="certifications" class="container my-5 section text-center">
         <h2>Certifications</h2>
-        <div class="cert-card">ISO 27001</div>
-        <div class="cert-card">Fortinet</div>
-        <div class="cert-card">CEH</div>
-        <div class="cert-card">CompTIA Security+</div>
+        <ul>
+            <li>🔹 ISO 27001</li>
+            <li>🔹 Fortinet</li>
+            <li>🔹 CEH</li>
+            <li>🔹 CompTIA Security+</li>
+        </ul>
     </section>
 
     <!-- Contact -->
@@ -97,6 +103,7 @@
         <h2>Contact</h2>
         <a href="https://github.com/hassensaddour"><img src="assets/images/github.png" class="social-icon"></a>
         <a href="https://www.linkedin.com/in/hassen-saddour/"><img src="assets/images/linkedin.png" class="social-icon"></a>
+        <p>Email: <a href="mailto:hassen.saddour@esprit.tn">hassen.saddour@esprit.tn</a></p>
     </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
