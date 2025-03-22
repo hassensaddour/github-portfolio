@@ -1,28 +1,36 @@
 body {
+    background-color: #121212;
+    color: white;
     font-family: 'Arial', sans-serif;
 }
 
 .hero {
-    background: url('images/hero-bg.jpg') no-repeat center center/cover;
-    padding: 100px 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(to bottom, #1a1a1a, #0d0d0d);
 }
 
-.hero h1 {
-    font-size: 3rem;
-}
-
-.card {
-    transition: transform 0.3s;
-}
-
-.card:hover {
-    transform: scale(1.05);
-}
-.profile-img {
+.profile-pic {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    object-fit: cover;
-    margin: 15px 0;
-    border: 3px solid #007bff;
+    margin-bottom: 15px;
+    border: 3px solid cyan;
+}
+
+h2 {
+    border-bottom: 2px solid cyan;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+a {
+    color: cyan;
+}
+
+a:hover {
+    color: white;
 }

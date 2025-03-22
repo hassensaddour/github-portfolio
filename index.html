@@ -1,81 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Portfolio - Cybersecurity Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/styles.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <script src="https://kit.fontawesome.com/YOUR-FONT-AWESOME-CODE.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">My Portfolio</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Cybersecurity Engineer</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-            </div>
         </div>
     </nav>
 
+    <!-- Sidebar -->
+    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="sidebar">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Menu</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="nav flex-column">
+                <li class="nav-item"><a class="nav-link text-white" href="#about">À propos</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#skills">Compétences</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#projects">Projets</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
     <!-- Hero Section -->
-    <header class="hero text-center text-light">
-        <div class="container">
-            <h1>Hi, I'm Hassen</h1>
-            <p>Cybersecurity Engineer | DevSecOps | Pentester</p>
-            <a href="#projects" class="btn btn-primary">View My Work</a>
+    <header class="hero">
+        <div class="container text-center text-white">
+            <img src="assets/images/profile.jpg" alt="Profile" class="profile-pic">
+            <h1>Hassen Saddour</h1>
+            <p>Cybersecurity Engineer | Pentester | DevSecOps</p>
         </div>
     </header>
 
-    <!-- About Section -->
-    <section id="about" class="container text-center py-5">
-        <h2>About Me</h2>
-        <img src="assets/images/profile.jpg" alt="Hassen" class="profile-img">
-        <p>I'm a cybersecurity expert with experience in penetration testing, SOC, and secure development.</p>
-    </section>
-    
-
-    <!-- Projects Section -->
-    <section id="projects" class="container py-5">
-        <h2 class="text-center">My Projects</h2>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="assets/images/project1.jpg" class="card-img-top" alt="Project 1">
-                    <div class="card-body">
-                        <h5 class="card-title">Cybersecurity Dashboard</h5>
-                        <p class="card-text">A SIEM-like dashboard using ELK stack.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="assets/images/project2.jpg" class="card-img-top" alt="Project 2">
-                    <div class="card-body">
-                        <h5 class="card-title">Pentest Automation</h5>
-                        <p class="card-text">Automated penetration testing tool for web applications.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- About -->
+    <section id="about" class="container my-5 text-white">
+        <h2>À propos de moi</h2>
+        <p>Passionné par la cybersécurité, je suis spécialisé dans le pentest, la sécurisation des infrastructures et DevSecOps.</p>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="bg-dark text-light text-center py-5">
-        <h2>Contact Me</h2>
-        <p>Email: your.email@example.com</p>
+    <!-- Skills -->
+    <section id="skills" class="container my-5 text-white">
+        <h2>Compétences</h2>
+        <ul>
+            <li>🔹 Pentesting (Web, Réseau, AD)</li>
+            <li>🔹 Déploiement SOC (SIEM, SOAR, XDR)</li>
+            <li>🔹 DevSecOps (Jenkins, Docker, Kubernetes, Nexus)</li>
+        </ul>
     </section>
 
+    <!-- Projects -->
+    <section id="projects" class="container my-5 text-white">
+        <h2>Projets</h2>
+        <p>🔹 Développement d'un moteur de scoring de vulnérabilités basé sur l'IA.</p>
+        <p>🔹 Mise en place d'une architecture SOC avec automatisation.</p>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="container my-5 text-white">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:hassen@example.com">hassen@example.com</a></p>
+        <p>LinkedIn: <a href="#">linkedin.com/in/hassen</a></p>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="assets/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
