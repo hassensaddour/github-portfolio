@@ -14,9 +14,9 @@ body {
 }
 
 .profile-pic-larger {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
+    width: 350px;
+    height: 350px;
+    border-radius: 70%;
     border: 5px solid cyan;
     object-fit: cover;
     box-shadow: 0px 0px 20px cyan;
