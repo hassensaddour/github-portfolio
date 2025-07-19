@@ -22,27 +22,30 @@ document.addEventListener("DOMContentLoaded", function () {
     let startX;
     let scrollLeft;
 
-    if (slider) {
-        slider.addEventListener('mousedown', (e) => {
-            isDown = true;
-            startX = e.pageX - slider.offsetLeft;
-            scrollLeft = slider.scrollLeft;
-        });
+if (slider) {
+    slider.addEventListener('mousedown', (e) => {
+        isDown = true;
+        slider.classList.add('dragging'); // ⬅️ Add this line
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+    });
 
-        slider.addEventListener('mouseleave', () => {
-            isDown = false;
-        });
+    slider.addEventListener('mouseleave', () => {
+        isDown = false;
+        slider.classList.remove('dragging'); // ⬅️ Add this line
+    });
 
-        slider.addEventListener('mouseup', () => {
-            isDown = false;
-        });
+    slider.addEventListener('mouseup', () => {
+        isDown = false;
+        slider.classList.remove('dragging'); // ⬅️ Add this line
+    });
 
-        slider.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - slider.offsetLeft;
-            const walk = (x - startX) * 1.5; // adjust scroll speed
-            slider.scrollLeft = scrollLeft - walk;
-        });
-    }
+    slider.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 1.5;
+        slider.scrollLeft = scrollLeft - walk;
+    });
+}
 });
