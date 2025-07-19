@@ -70,11 +70,14 @@ h2:hover {
 .project-container {
     display: flex;
     overflow-x: auto;
-    scroll-snap-type: x proximity;
+    scroll-behavior: smooth;
     gap: 20px;
     padding: 10px 0;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
+    cursor: grab;
+}
+
+.project-container:active {
+    cursor: grabbing;
 }
 
 .project-container::-webkit-scrollbar {
