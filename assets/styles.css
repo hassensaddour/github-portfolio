@@ -69,20 +69,28 @@ h2:hover {
 .project-container {
     display: flex;
     overflow-x: auto;
-    padding: 10px;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding: 10px 0;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+.project-container::-webkit-scrollbar {
+    display: none;
 }
 
 .project-card {
-    flex: 0 0 350px; 
-    height: 250px; 
+    flex: 0 0 300px;
+    scroll-snap-align: center;
     background: #1e1e1e;
     margin: 10px;
-    padding: 20px; 
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
-    transition: transform 0.3s;
-    text-align: center; 
-    color: white; 
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+    color: white;
 }
 
 .project-card:hover {
