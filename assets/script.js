@@ -19,52 +19,58 @@ document.addEventListener("DOMContentLoaded", function () {
     // 🔄 Drag-to-scroll logic for horizontal project container
     const slider = document.querySelector('.project-container');
     let isDown = false;
+    let isDragging = false;
     let startX;
     let scrollLeft;
-
-if (slider) {
-    let isDragging = false;
-    let dragStartX = 0;
     let dragThreshold = 5;
 
-    slider.addEventListener('mousedown', (e) => {
-        isDown = true;
-        slider.classList.add('dragging');
-        dragStartX = e.pageX;
-        startX = e.pageX - slider.offsetLeft;
-        scrollLeft = slider.scrollLeft;
-    });
-
-    slider.addEventListener('mouseleave', () => {
-        isDown = false;
-        slider.classList.remove('dragging');
-    });
-
-    slider.addEventListener('mouseup', (e) => {
-        isDown = false;
-        slider.classList.remove('dragging');
-        const dragDistance = Math.abs(e.pageX - dragStartX);
-        isDragging = dragDistance > dragThreshold;
-    });
-
-    slider.addEventListener('mousemove', (e) => {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - slider.offsetLeft;
-        const walk = (x - startX) * 1.5;
-        slider.scrollLeft = scrollLeft - walk;
-    });
-
-    // Prevent click if it was a drag
-    const cards = slider.querySelectorAll('.project-card');
-    cards.forEach(card => {
-        card.addEventListener('click', function (e) {
-            if (isDragging) {
-                e.preventDefault();
-                e.stopImmediatePropagation();
-                isDragging = false; // reset
-            }
+    if (slider) {
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            isDragging = false;
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+            slider.classList.add('dragging');
         });
-    });
-}
 
+        slider.addEventListener('mouseleave', () => {
+            isDown = false;
+            slider.classList.remove('dragging');
+        });
+
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+            slider.classList.remove('dragging');
+
+            // Delay resetting drag status to ensure click handler checks it
+            setTimeout(() => {
+                isDragging = false;
+            }, 0);
+        });
+
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 1.5;
+
+            if (Math.abs(walk) > dragThreshold) {
+                isDragging = true;
+            }
+
+            e.preventDefault();
+            slider.scrollLeft = scrollLeft - walk;
+        });
+
+        // Prevent clicks after dragging
+        const cards = slider.querySelectorAll('.project-card');
+        cards.forEach(card => {
+            card.addEventListener('click', function (e) {
+                if (isDragging) {
+                    e.preventDefault();
+                    e.stopImmediatePropagation();
+                }
+            });
+        });
+    }
+});
