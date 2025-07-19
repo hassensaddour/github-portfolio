@@ -64,13 +64,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Prevent clicks after dragging
         const cards = slider.querySelectorAll('.project-card');
-        cards.forEach(card => {
-            card.addEventListener('click', function (e) {
-                if (isDragging) {
-                    e.preventDefault();
-                    e.stopImmediatePropagation();
-                }
-            });
-        });
+cards.forEach(card => {
+    card.addEventListener('click', function (e) {
+        if (isDragging) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            return;
+        }
+
+        // If not dragging, follow the link
+        const link = this.getAttribute('data-link');
+        if (link) {
+            window.location.href = link;
+        }
+    });
+});
+
     }
 });
