@@ -2,6 +2,7 @@ body {
     background-color: #121212;
     color: white;
     font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
 }
 
 .hero {
@@ -69,7 +70,7 @@ h2:hover {
 .project-container {
     display: flex;
     overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    scroll-snap-type: x proximity;
     gap: 20px;
     padding: 10px 0;
     scroll-behavior: smooth;
