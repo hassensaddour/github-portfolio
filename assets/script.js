@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let isDragging = false;
     let startX;
     let scrollLeft;
-    let dragThreshold = 5;
+    let dragThreshold = 3;
 
     if (slider) {
         slider.addEventListener('mousedown', (e) => {
