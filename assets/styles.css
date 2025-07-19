@@ -138,6 +138,10 @@ h2:hover {
     box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
 }
 
+.certification-card * {
+    user-select: none;
+}
+
 .certification-card i {
     color: cyan;
     margin-bottom: 5px; /* Decrease margin for smaller cards */
