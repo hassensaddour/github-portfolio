@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
 if (slider) {
     let isDragging = false;
     let dragStartX = 0;
-    let dragThreshold = 10; // Minimum px to consider a "drag"
+    let dragThreshold = 3; // Minimum px to consider a "drag"
 
     slider.addEventListener('mousedown', (e) => {
         isDown = true;
