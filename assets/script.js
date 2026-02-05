@@ -1,84 +1,109 @@
 document.addEventListener("DOMContentLoaded", function () {
-    console.log("Portfolio Loaded!");
+    console.log("System Online: Portfolio Loaded");
 
-    // Section fade-in logic
-    const sections = document.querySelectorAll('.section');
+    // --- Typewriter Effect for Hero Section ---
+    const textElement = document.getElementById("typewriter-text");
+    const roles = [
+        "Cybersecurity Engineer...",
+        "SOC Analyst...",
+        "n8n Automation Specialist...",
+        "Network Security."  // <--- Updated Text
+    ];
+    
+    let roleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    
+    function typeEffect() {
+        const currentRole = roles[roleIndex];
+        if (isDeleting) {
+            textElement.innerHTML = currentRole.substring(0, charIndex--) + '<span class="cursor">|</span>';
+        } else {
+            textElement.innerHTML = currentRole.substring(0, charIndex++) + '<span class="cursor">|</span>';
+        }
 
-    function checkScroll() {
-        sections.forEach(section => {
-            const sectionTop = section.getBoundingClientRect().top;
-            if (sectionTop < window.innerHeight - 100) {
-                section.classList.add('show');
-            }
-        });
+        let typeSpeed = isDeleting ? 50 : 100;
+        if (!isDeleting && charIndex === currentRole.length) {
+            typeSpeed = 2000;
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            roleIndex = (roleIndex + 1) % roles.length;
+            typeSpeed = 500;
+        }
+        setTimeout(typeEffect, typeSpeed);
     }
+    if(textElement) typeEffect();
 
-    window.addEventListener('scroll', checkScroll);
-    checkScroll();
+    // --- Scroll Fade-In Animation ---
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('show');
+        });
+    }, { threshold: 0.1 });
 
-    // 🔄 Drag-to-scroll logic for horizontal project container
+    document.querySelectorAll('.section').forEach(section => observer.observe(section));
+
+    // --- 🔄 FIXED DRAG TO SCROLL LOGIC ---
     const slider = document.querySelector('.project-container');
     let isDown = false;
-    let isDragging = false;
     let startX;
     let scrollLeft;
-    let dragThreshold = 3;
+    let isDragging = false; // Flag to distinguish drag vs click
 
     if (slider) {
         slider.addEventListener('mousedown', (e) => {
             isDown = true;
-            isDragging = false;
+            isDragging = false; // Reset drag status
+            slider.classList.add('active'); // Change cursor
             startX = e.pageX - slider.offsetLeft;
             scrollLeft = slider.scrollLeft;
-            slider.classList.add('dragging');
         });
-
+        
         slider.addEventListener('mouseleave', () => {
             isDown = false;
-            slider.classList.remove('dragging');
+            slider.classList.remove('active');
         });
-
+        
         slider.addEventListener('mouseup', () => {
             isDown = false;
-            slider.classList.remove('dragging');
-
-            // Delay resetting drag status to ensure click handler checks it
-            setTimeout(() => {
-                isDragging = false;
-            }, 0);
+            slider.classList.remove('active');
+            
+            // Short timeout to allow click event to check drag status
+            setTimeout(() => { isDragging = false; }, 50); 
         });
-
+        
         slider.addEventListener('mousemove', (e) => {
             if (!isDown) return;
-
+            e.preventDefault(); // Stop default text selection behavior
+            
             const x = e.pageX - slider.offsetLeft;
-            const walk = (x - startX) * 1.5;
-
-            if (Math.abs(walk) > dragThreshold) {
+            const walk = (x - startX) * 2; // Scroll multiplier
+            
+            // If moved more than 5px, consider it a drag
+            if (Math.abs(walk) > 5) {
                 isDragging = true;
             }
-
-            e.preventDefault();
+            
             slider.scrollLeft = scrollLeft - walk;
         });
 
-        // Prevent clicks after dragging
-        const cards = slider.querySelectorAll('.project-card');
-cards.forEach(card => {
-    card.addEventListener('click', function (e) {
-        if (isDragging) {
-            e.preventDefault();
-            e.stopImmediatePropagation();
-            return;
-        }
-
-        // If not dragging, follow the link
-        const link = this.getAttribute('data-link');
-        if (link) {
-            window.location.href = link;
-        }
-    });
-});
-
+        // Add Click Listeners to Cards
+        const cards = document.querySelectorAll('.project-card');
+        cards.forEach(card => {
+            card.addEventListener('click', function(e) {
+                // If we were dragging, STOP the link from opening
+                if (isDragging) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                } else {
+                    // If not dragging, go to the link
+                    const link = this.getAttribute('data-link');
+                    if (link && link !== '#') {
+                        window.location.href = link;
+                    }
+                }
+            });
+        });
     }
 });
