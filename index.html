@@ -100,91 +100,169 @@
     </section>
 
     <section id="skills" class="container my-5 section">
-        <h2 class="section-title"><i class="fas fa-microchip"></i> System_Capabilities</h2>
-        <div class="row">
-            <div class="col-md-6">
-                <h4 class="skill-category">>> Defensive & Network Ops</h4>
-                <div class="skill-box">
-                    <div class="d-flex justify-content-between mono-font">
-                        <span>SOC Operations</span>
-                        <span>90%</span>
-                    </div>
-                    <div class="progress cyber-progress"><div class="progress-bar cyan-glow" style="width: 90%"></div></div>
-                </div>
-                <div class="skill-box">
-                    <div class="d-flex justify-content-between mono-font">
-                        <span>Network Security & Firewalls</span>
-                        <span>85%</span>
-                    </div>
-                    <div class="progress cyber-progress"><div class="progress-bar cyan-glow" style="width: 85%"></div></div>
-                </div>
-                <div class="skill-box">
-                    <div class="d-flex justify-content-between mono-font">
-                        <span>Incident Response</span>
-                        <span>80%</span>
-                    </div>
-                    <div class="progress cyber-progress"><div class="progress-bar cyan-glow" style="width: 80%"></div></div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <h4 class="skill-category">>> GRC & Automation</h4>
-                <div class="skill-box">
-                    <div class="d-flex justify-content-between mono-font">
-                        <span>n8n Workflow Automation</span>
-                        <span>95%</span>
-                    </div>
-                    <div class="progress cyber-progress"><div class="progress-bar purple-glow" style="width: 95%"></div></div>
-                </div>
-                <div class="skill-box">
-                    <div class="d-flex justify-content-between mono-font">
-                        <span>GRC & Audit</span>
-                        <span>75%</span>
-                    </div>
-                    <div class="progress cyber-progress"><div class="progress-bar green-glow" style="width: 75%"></div></div>
-                </div>
-                <div class="skill-box">
-                    <div class="d-flex justify-content-between mono-font">
-                        <span>Scripting (Python/Bash)</span>
-                        <span>70%</span>
-                    </div>
-                    <div class="progress cyber-progress"><div class="progress-bar orange-glow" style="width: 70%"></div></div>
+    <h2 class="section-title">
+        <i class="fas fa-shield-alt"></i> Expertise & Technologies
+    </h2>
+
+    <div class="row g-4">
+
+        <!-- Security Operations -->
+        <div class="col-md-6">
+            <div class="skill-card">
+                <h4 class="skill-title">
+                    <i class="fas fa-network-wired"></i>
+                    Security Operations
+                </h4>
+
+                <div class="skill-tags">
+                    <span>Wazuh SIEM</span>
+                    <span>Splunk SIEM</span>
+                    <span>Threat Hunting</span>
+                    <span>Incident Response</span>
+                    <span>Sysmon</span>
+                    <span>SOAR</span>
+                    <span>pfSense</span>
+                    <span>IDS/IPS</span>
                 </div>
             </div>
         </div>
-    </section>
+
+        <!-- Offensive Security -->
+        <div class="col-md-6">
+            <div class="skill-card">
+                <h4 class="skill-title">
+                    <i class="fas fa-bug"></i>
+                    Offensive Security
+                </h4>
+
+                <div class="skill-tags">
+                    <span>Burp Suite</span>
+                    <span>Nmap</span>
+                    <span>Metasploit</span>
+                    <span>Kali Linux</span>
+                    <span>Secator</span>
+                    <span>Wireshark</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Automation -->
+        <div class="col-md-6">
+            <div class="skill-card">
+                <h4 class="skill-title">
+                    <i class="fas fa-robot"></i>
+                    Security Automation
+                </h4>
+
+                <div class="skill-tags">
+                    <span>n8n</span>
+                    <span>Python</span>
+                    <span>Bash</span>
+                    <span>Django</span>
+                    <span>Next.js</span>
+                    <span>AI Agents</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- DevSecOps -->
+        <div class="col-md-6">
+            <div class="skill-card">
+                <h4 class="skill-title">
+                    <i class="fas fa-server"></i>
+                    DevSecOps & Infrastructure
+                </h4>
+
+                <div class="skill-tags">
+                    <span>Docker</span>
+                    <span>Jenkins</span>
+                    <span>SonarQube</span>
+                    <span>Vault</span>
+                    <span>Ansible</span>
+                    <span>Splunk</span>
+                    <span>Grafana</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Compliance -->
+        <div class="col-md-6">
+            <div class="skill-card">
+                <h4 class="skill-title">
+                    <i class="fas fa-clipboard-check"></i>
+                    Governance, Risk & Compliance
+                </h4>
+
+                <div class="skill-tags">
+                    <span>ISO 27001</span>
+                    <span>CIS v8</span>
+                    <span>OWASP ASVS</span>
+                    <span>PCI-DSS</span>
+                    <span>Risk Scoring</span>
+                    <span>Audit</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
 
     <section id="projects" class="container my-5 section">
-      <h2 class="section-title"><i class="fas fa-terminal"></i> Executables / Projects</h2>
-      <div class="project-wrapper">
-        <div class="project-container">
-            <div class="project-card" data-link="soc.html">
-                <div class="card-icon"><i class="fas fa-shield-alt"></i></div>
-                <h5>SOC Analyst Labs</h5>
-                <p>Threat Hunting with Wazuh, Splunk SIEM configuration, and Log Analysis.</p>
-                <span class="badge-cyber">Wazuh</span>
-                <span class="badge-cyber">Splunk</span>
-            </div>
-            <div class="project-card" data-link="#">
-                <div class="card-icon"><i class="fas fa-key"></i></div>
-                <h5>Encryption Tool</h5>
-                <p>Secure encryption/decryption tool using AES and RSA.</p>
-                <span class="badge-cyber">Cryptography</span>
-            </div>
-            <div class="project-card" data-link="#">
-                <div class="card-icon"><i class="fas fa-infinity"></i></div>
-                <h5>DevSecOps Pipeline</h5>
-                <p>Implemented a secure CI/CD pipeline with automated testing.</p>
-                <span class="badge-cyber">Jenkins</span>
-            </div>
-            <div class="project-card" data-link="n8n.html">
-                <div class="card-icon"><i class="fas fa-project-diagram"></i></div>
-                <h5>n8n Automations</h5>
-                <p>Automated workflows: AI, alerts, APIs.</p>
+    <h2 class="section-title"><i class="fas fa-terminal"></i> Executables / Projects</h2>
+
+    <h4 class="text-cyan mono-font mt-5 mb-4"><i class="fas fa-project-diagram"></i> ./n8n_Automations</h4>
+    
+    <div class="project-wrapper" style="overflow-x: auto; padding-bottom: 20px;">
+        <div class="project-container" style="display: flex; flex-wrap: nowrap; gap: 20px;">
+            
+            <div class="project-card" data-link="https://github.com/hassensaddour/RAG_supabase" style="cursor: pointer; flex: 0 0 320px;">
+                <div class="card-icon"><i class="fas fa-brain"></i></div>
+                <h5>Supabase RAG AI Agent</h5>
+                <p>AI-powered RAG system ingesting Google Drive docs, generating Gemini embeddings, and querying via Supabase Vector Store.</p>
                 <span class="badge-cyber">n8n</span>
+                <span class="badge-cyber">Supabase</span>
+                <span class="badge-cyber">Gemini AI</span>
+                <div class="mt-3 text-cyan small"><i class="fab fa-github"></i> View Repo</div>
             </div>
+
+            <div class="project-card" data-link="https://github.com/hassensaddour/n8n-weather-workflow" style="cursor: pointer; flex: 0 0 320px;">
+                <div class="card-icon"><i class="fas fa-cloud-sun"></i></div>
+                <h5>Daily Weather Reporter</h5>
+                <p>Automated workflow fetching daily forecasts and delivering HTML email briefings.</p>
+                <span class="badge-cyber">n8n</span>
+                <span class="badge-cyber">API</span>
+                <div class="mt-3 text-cyan small"><i class="fab fa-github"></i> View Repo</div>
+            </div>
+
+            <div class="project-card" data-link="https://github.com/hassensaddour/AI-Social-Media-Automation-with-n8n" style="cursor: pointer; flex: 0 0 320px;">
+                <div class="card-icon"><i class="fas fa-robot"></i></div>
+                <h5>AI Social Media Automation</h5>
+                <p>AI-powered generation, human approval via Telegram, and multi-platform publishing.</p>
+                <span class="badge-cyber">n8n</span>
+                <span class="badge-cyber">Gemini AI</span>
+                <div class="mt-3 text-cyan small"><i class="fab fa-github"></i> View Repo</div>
+            </div>
+
         </div>
-      </div>
-    </section>
+    </div>
+
+    <h4 class="text-cyan mono-font mt-5 mb-4"><i class="fas fa-shield-alt"></i> ./SOC_Analyst_Labs</h4>
+    <div class="project-wrapper" style="overflow-x: auto; padding-bottom: 20px;">
+        <div class="project-container" style="display: flex; flex-wrap: nowrap; gap: 20px;">
+            
+            <div class="project-card" data-link="https://github.com/hassensaddour/SSH-Log-Analysis-Splunk" style="cursor: pointer; flex: 0 0 320px;">
+                <div class="card-icon"><i class="fas fa-file-code"></i></div>
+                <h5>SSH Log Analysis</h5>
+                <p>Splunk SIEM ingestion, brute-force detection, and custom dashboard visualization.</p>
+                <span class="badge-cyber">Splunk</span>
+                <span class="badge-cyber">SPL</span>
+                <div class="mt-3 text-cyan small"><i class="fab fa-github"></i> View Repo</div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
 
     <section id="certifications" class="container my-5 section">
         <h2 class="section-title"><i class="fas fa-certificate"></i> Certifications_Prep</h2>
@@ -193,28 +271,28 @@
                 <div class="cert-card">
                     <i class="fas fa-shield-alt"></i>
                     <h5>ISO 27001</h5>
-                    <p class="small text-muted">In Progress</p>
+                    <p class="small text-white">In Progress</p>
                 </div>
             </div>
             <div class="col-6 col-md-3 mb-4">
                 <div class="cert-card">
                     <i class="fas fa-network-wired"></i>
                     <h5>Fortinet NSE</h5>
-                    <p class="small text-muted">In Progress</p>
+                    <p class="small text-white">In Progress</p>
                 </div>
             </div>
             <div class="col-6 col-md-3 mb-4">
                 <div class="cert-card">
                     <i class="fas fa-user-secret"></i>
                     <h5>CEH</h5>
-                    <p class="small text-muted">In Progress</p>
+                    <p class="small text-white">In Progress</p>
                 </div>
             </div>
             <div class="col-6 col-md-3 mb-4">
                 <div class="cert-card">
                     <i class="fas fa-lock"></i>
                     <h5>Security+</h5>
-                    <p class="small text-muted">In Progress</p>
+                    <p class="small text-white">In Progress</p>
                 </div>
             </div>
         </div>

@@ -44,14 +44,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.querySelectorAll('.section').forEach(section => observer.observe(section));
 
-    // --- 🔄 FIXED DRAG TO SCROLL LOGIC ---
-    const slider = document.querySelector('.project-container');
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-    let isDragging = false; // Flag to distinguish drag vs click
+    // --- 🔄 FIXED DRAG TO SCROLL LOGIC FOR ALL SLIDERS ---
+    // Grab ALL project containers instead of just the first one
+    const sliders = document.querySelectorAll('.project-container');
+    
+    sliders.forEach(slider => {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+        let isDragging = false; // Flag to distinguish drag vs click
 
-    if (slider) {
         slider.addEventListener('mousedown', (e) => {
             isDown = true;
             isDragging = false; // Reset drag status
@@ -88,8 +90,8 @@ document.addEventListener("DOMContentLoaded", function () {
             slider.scrollLeft = scrollLeft - walk;
         });
 
-        // Add Click Listeners to Cards
-        const cards = document.querySelectorAll('.project-card');
+        // Add Click Listeners to Cards inside THIS specific slider
+        const cards = slider.querySelectorAll('.project-card');
         cards.forEach(card => {
             card.addEventListener('click', function(e) {
                 // If we were dragging, STOP the link from opening
@@ -100,10 +102,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     // If not dragging, go to the link
                     const link = this.getAttribute('data-link');
                     if (link && link !== '#') {
-                        window.location.href = link;
+                        // Open GitHub links in a new tab
+                        window.open(link, '_blank');
                     }
                 }
             });
         });
-    }
+    });
 });
